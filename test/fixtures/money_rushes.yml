@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place_type: MyString
+  place_id: MyString
+  address: MyText
+  lat: MyString
+  lng: MyString
+  name: MyText
+  cash: false
+  long_queue: false
+  open: false
+  search_by: MyString
+  reported_at: 2016-12-07 15:37:11
+
+two:
+  place_type: MyString
+  place_id: MyString
+  address: MyText
+  lat: MyString
+  lng: MyString
+  name: MyText
+  cash: false
+  long_queue: false
+  open: false
+  search_by: MyString
+  reported_at: 2016-12-07 15:37:11
