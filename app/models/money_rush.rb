@@ -1,0 +1,2 @@
+class MoneyRush < ApplicationRecord
+end

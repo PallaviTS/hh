@@ -11,7 +11,7 @@ one:
   long_queue: false
   open: false
   search_by: MyString
-  reported_at: 2016-12-07 15:37:11
+  reported_at: 2016-12-07 16:19:29
 
 two:
   place_type: MyString
@@ -24,4 +24,4 @@ two:
   long_queue: false
   open: false
   search_by: MyString
-  reported_at: 2016-12-07 15:37:11
+  reported_at: 2016-12-07 16:19:29

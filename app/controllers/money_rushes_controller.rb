@@ -3,7 +3,7 @@ class MoneyRushesController < ApplicationController
 
   # GET /money_rushes
   def index
-    @money_rushes = MoneyRush.all
+    @money_rushes = MoneyRush.where(search_by: params[:search_by])
 
     render json: @money_rushes
   end
@@ -41,11 +41,11 @@ class MoneyRushesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_money_rush
-      @money_rush = MoneyRush.find(params[:id])
+      @money_rush = MoneyRush.where(place_id: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def money_rush_params
-      params.require(:money_rush).permit(:place_type, :place_id, :address, :lat, :lng, :name, :cash, :long_queue, :open, :search_by, :reported_at)
+      params.permit(:place_type, :id, :place_id, :address, :lat, :lng, :name, :cash, :long_queue, :open, :search_by, :reported_at)
     end
 end
