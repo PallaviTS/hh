@@ -25,7 +25,7 @@ class MoneyRushesController < ApplicationController
 
   # PATCH/PUT /money_rushes/1
   def update
-    if @money_rush.update(money_rush_params)
+    if @money_rush.update(money_rush_params.merge(reported_at: DateTime.now))
       render json: @money_rush
     else
       render json: @money_rush.errors, status: :unprocessable_entity
@@ -40,7 +40,7 @@ class MoneyRushesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_money_rush
-      @money_rush = MoneyRush.where(place_id: params[:id])
+      @money_rush = MoneyRush.where(place_id: params[:id]).first
     end
 
     # Only allow a trusted parameter "white list" through.
