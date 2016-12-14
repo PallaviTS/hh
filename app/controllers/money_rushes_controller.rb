@@ -4,7 +4,6 @@ class MoneyRushesController < ApplicationController
   # GET /money_rushes
   def index
     @money_rushes = MoneyRush.where(search_by: params[:search_by])
-
     render json: @money_rushes
   end
 
