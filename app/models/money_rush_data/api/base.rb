@@ -5,12 +5,12 @@ module MoneyRushData
 
       base_uri 'https://maps.googleapis.com'
 
-      def initialize(query_string)
-        @options = { query: {key: "AIzaSyBSP1ln4k4pVUag50Y9G-c0-JlMvxL9nMs", query: "#{query_string}" } }
+      def initialize(query_string, pagetoken=nil)
+        @options = { query: {key: ENV['API_KEY'], query: "#{query_string}", pagetoken: "#{pagetoken}" } }
       end
 
       def fetch
-        self.class.get("/maps/api/place/textsearch/json", @options).parsed_response['results']
+        self.class.get("/maps/api/place/textsearch/json", @options).parsed_response
       end
     end
   end
