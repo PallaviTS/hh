@@ -45,6 +45,6 @@ class MoneyRushesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def money_rush_params
-      params.permit(:place_type, :id, :place_id, :address, :lat, :lng, :name, :cash, :long_queue, :open, :search_by, :reported_at)
+      params.permit(:place_type, :place_id, :address, :lat, :lng, :name, :cash, :long_queue, :open, :search_by, :reported_at)
     end
 end

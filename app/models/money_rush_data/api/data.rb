@@ -21,7 +21,7 @@ module MoneyRushData
                                        lat: data['geometry']['location']['lat'],
                                        lng: data['geometry']['location']['lng'],
                                        name: data['name'],
-                                       search_by: query_string.split('+').join(',')
+                                       search_by: query_string.split('+').last
                                      })
         end
         pagetoken = results['next_page_token'].presence
