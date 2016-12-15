@@ -3,7 +3,7 @@ class MoneyRushSerializer < ActiveModel::Serializer
 
 
   def reported_at
-    object.reported_at.localtime.strftime("%A, %d %b %Y %l:%M %p") if object.reported_at
+    object.reported_at.localtime.strftime("%d %b %Y %l:%M %p") if object.reported_at
   end
 
   def distance_between(lat1, lon1, lat2, lon2)
