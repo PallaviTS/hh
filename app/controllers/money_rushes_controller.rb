@@ -26,6 +26,9 @@ class MoneyRushesController < ApplicationController
   # PATCH/PUT /money_rushes/1
   def update
     if @money_rush.update(money_rush_params.merge(reported_at: DateTime.now))
+      if money_rush_params[:cash] == false
+        @money_rush.update_attribute(long_queue: false)
+      end
       render json: @money_rush
     else
       render json: @money_rush.errors, status: :unprocessable_entity
